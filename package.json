@@ -1,0 +1,31 @@
+{
+    "name": "parcours-resistant-numerique",
+    "version": "1.0.0",
+    "description": "Le Parcours du Résistant Numérique - Jeu narratif éducatif MERN",
+    "main": "server/server.js",
+    "scripts": {
+        "start": "node server/server.js",
+        "dev": "nodemon server/server.js",
+        "client": "cd client && npm run dev",
+        "install-all": "npm install && cd client && npm install",
+        "seed": "node server/seed.js"
+    },
+    "keywords": [
+        "mern",
+        "education",
+        "numérique",
+        "jeu",
+        "narratif"
+    ],
+    "author": "Nuit de l'Info",
+    "license": "MIT",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "mongoose": "^8.0.3"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.2"
+    }
+}
