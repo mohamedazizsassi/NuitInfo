@@ -12,6 +12,14 @@ router.get('/', async (req, res) => {
     try {
         const { role } = req.query;
 
+        // Vérifie si la DB est vide, si oui auto-seed
+        const count = await Episode.countDocuments();
+        if (count === 0) {
+            console.log('📦 Base vide détectée, auto-seed des épisodes...');
+            await Episode.insertMany(seedEpisodes);
+            console.log('✅ 10 épisodes insérés automatiquement');
+        }
+
         // Filtre par rôle si spécifié
         let filter = {};
         if (role && role !== 'all') {
