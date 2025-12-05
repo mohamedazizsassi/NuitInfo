@@ -185,4 +185,9 @@ async function seedDatabase() {
 }
 
 // Exécution
-seedDatabase();
+if (require.main === module) {
+    seedDatabase();
+}
+
+// Export pour utilisation dans les routes
+module.exports = { seedEpisodes: [...seedEpisodes, ...newEpisodes] };
